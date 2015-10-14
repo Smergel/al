@@ -1,0 +1,27 @@
+<div class="container-fluid">
+	<div class="row top">
+		
+	</div>
+</div>
+<div class="container">
+	<div class="row">
+		<div class="col-lg-6">
+			<table style="width:100%">
+				<tr>
+					<th>Name</th>
+					<th>Songlist</th>
+					<th>Time</th>
+					<th>Score</th>
+				</tr>
+				<% @leaderboard.each do |x| x.score %>
+				<tr>
+					<td><%= x.user_id.nil? ? "Anon (probably Bill)" : User.find(x.user_id).email %></td>
+					<td><%= "Album Exchange" %></td>
+					<td><%= x.time %></td>
+					<td><%= x.score %></td>
+				</tr>
+				<% end %>
+			</table> 
+		</div>
+	</div>
+</div>

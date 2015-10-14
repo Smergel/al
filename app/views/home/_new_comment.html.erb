@@ -1,0 +1,8 @@
+<%= form_for Comment.new do |f| %>
+	<%= f.hidden_field :post_id, value: @request %>
+	<div class="form-group">
+		<%= f.label "What did you think?", for: "comment" %>
+		<%= f.text_area :comment, class: "form-control", placeholder: "Comment" %>
+	</div>
+	<%= f.submit :Submit, class: "btn btn-default" %>
+<% end %>

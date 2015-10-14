@@ -1,0 +1,12 @@
+<%= form_for @event do |f| %>
+	<fieldset>
+		<legend>Enter An Event On The Calendar</legend>
+			<div class="field">
+				<%= f.label "Date" %>
+				<%= f.date_select :date, start_year: 2012, end_year: 2015 %>
+			</div>
+			<div class="field"><%= f.text_field :event_body, placeholder: "Event" %></div>
+			<div class="field"><%= f.text_field :link, placeholder: "Event Link" %></div><br />
+			<%= f.submit :Submit, class: "form_btn" %>
+	</fieldset>
+<% end %>

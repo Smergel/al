@@ -1,0 +1,64 @@
+<div class="container-fluid">
+	<div class="row top">
+		<div class="col-lg-12">
+			<a href="/events/new" class="btn btn-default right">Create A List</a>
+			<a href="/leaderboard" class="btn btn-default right">Leaderboard</a>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div class="row game">
+		<div class="col-lg-7">
+			<!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
+		    <div id="player"></div>
+		    <div class="hider">Hard Mode Is On<br />To turn if off click the difficulty toggle.</div>
+		    <div id="game_over">Game Over</div>
+		</div>
+		<div class="col-lg-5">
+			<ul class="button_row">
+				<li><div class="btn btn-default" onclick="reloader()">Start A New Game</div></li>
+				<li><a href="#" class="btn btn-default" onclick="hider()">Difficulty Toggle</a></li>
+				<li><div class="dropdown">
+					<button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Pick a Song List  <span class="caret"></span></button>
+					<ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+						<li role="presentation"><a role="menuitem" tabindex="-1" href="#">The Album Exchange</a></li>
+					</ul>
+				</div></li>
+			</ul>
+			<div class="current_time">Your Time Is: <span id="time">0:00:00</span></div>
+			<div id="your_score" class="current_score">Your Score Is: <span id="score">...</span></div>
+			<input type="text" id="guess" placeholder="Guess The Artist..." />
+		    <button onclick="submit()" href="javascript:;" id="submit_guess">Submit</button>
+		</div>
+	</div>
+</div>
+<script>
+	  var tag = document.createElement('script');
+	  tag.src = "https://www.youtube.com/iframe_api";
+	  var firstScriptTag = document.getElementsByTagName('script')[0];
+	  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+	  var player;
+	  function onYouTubePlayerAPIReady() {
+	    player = new YT.Player('player', {
+	      height: '400px',
+	      width: '600px',
+	      playerVars: {
+	        showinfo: 0,
+	        controls: 0, 
+	        minimalbranding: 0,
+	        disablekb: 0
+	      },
+	     loadPlaylist:{
+	        listType:'playlist',
+	        list:gon.youtube,
+	        index:parseInt(0),
+	        suggestedQuality:'small'
+	     },
+	      events: {
+	        'onReady': onPlayerReady,
+	        'onStateChange': onPlayerStateChange
+	      }
+	    });
+	  }
+	</script>

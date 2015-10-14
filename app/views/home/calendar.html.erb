@@ -1,0 +1,45 @@
+<div class="container-fluid">
+	<div class="row top">
+		<div class="col-lg-12">
+			<a href="/events/new" class="btn btn-default right">Create A New Event</a>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div class="row cal">
+		<div class="col-lg-12">
+			<div class="months">
+				<%= link_to @date_today.prev_month.strftime("%B"), date: @date_today.prev_month, class: "other_month" %>
+				<div class="month"><%= @date_today.strftime("%B %Y") %></div>
+				<%= link_to @date_today.next_month.strftime("%B"), date: @date_today.next_month, class: "other_month" %>
+			</div>
+			<%= calendar @date_today do |date| %>
+				<%= date.day %>
+				<% @posts.each do |x| %>
+					<% if x.date == date %>
+						<% if x.date.past? || x.date.today? %>
+							<ul class="date_list">
+								<li><%= link_to x.band_name, x %></li>
+							</ul>
+						<% else %>
+							<ul class="date_list">
+								<li>
+									<% x.band_name.split(" ").each do |z| %>
+									 	<%= z[0] %>
+								 	<% end %>
+								</li>
+							</ul>
+						<% end %>
+					<% end %>
+				<% end %>
+				<% @events.each do |y| %>
+					<% if y.date == date %>
+						<ul class="date_list">
+							<li class="concert"><%= link_to y.event_body, y.link %></li>
+						</ul>
+					<% end %>
+				<% end %>
+			<% end %>
+		</div>
+	</div>
+</div>

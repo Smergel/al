@@ -1,0 +1,55 @@
+<div class="grad">
+	<%= image_tag @post.band_pic %>
+</div>
+<div class="container">
+	<div class="row top_home">
+		<div class="col-lg-12 rel">
+			<div class="tit">
+				<div class="band"><%= @post.band_name %></div>
+				<div class="album"><%= @post.album_name %></div>
+				<div class="author"><%= User.find(@post.user_id).email %>  |  <%= @post.created_at %></div>
+			</div>
+		</div>
+	</div>
+	<div class="row stuff">
+		<div class="col-lg-8">
+			<div class="image_album"><%= image_tag @post.album_art %></div>
+			<div class="write_up"><%= @post.write_up %></div>
+		</div>
+		<div class="col-lg-4">
+			<iframe id="ytplayer" type="text/html" width="100%" src="http://www.youtube.com/embed/<%= @post.youtube.split('=')[1] %>" frameborder="0" ></iframe>
+			<hr />
+			<div class="comments">
+				<%= render "new_comment" %><hr />
+				<ul class="comment_list">
+					<% @all_comments.each do |x| %>
+						<li class="comment_item">
+							<span class="commentor"><em><%= User.find(x.user_id).email %>  |  <%=x.created_at %></em></span><br />
+							<%= x.comment %><hr />
+						</li>
+					<% end %>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="row center bottom">
+		<div class="col-lg-12">
+			<div class="quote"><%= @post.quote %></div>
+		</div>
+	</div>
+	<div class="row bottom">
+		<% @posts.reverse.last(4)[1..3].each do |x| %>
+			<div class="col-lg-4">
+				<ul class="past_album_list">
+					<li>
+						<div class="art"><%= image_tag x.album_art %></div>
+						<%= link_to x.band_name.first(22), "posts/#{x.id}" %><br />
+						<%= link_to x.album_name.first(22), "posts/#{x.id}" %>
+					</li>
+				</ul>
+			</div>
+		<% end %>
+	</div>
+</div>
+
+ 

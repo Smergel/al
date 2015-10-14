@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AlbumExchange</title>
+  <%= Gon::Base.render_data %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+	<div class="logo"><img src="/assets/AElogo.svg" height="35" /></div>
+
+<%= yield %>
+
+	<div class="footer">
+		<div class="left_footer">
+			<ul>
+				<li><a href="/">Current Album</a></li>
+				<% if !current_user.nil? %>
+					<li><%= link_to "New Pick", new_post_path %></li>
+				<% end %>
+				<li><%= link_to "Past Albums", posts_path %></li>
+				<li><%= link_to "Album Exchange-Off", games_path %></li>
+				<li><%= link_to "Calendar", calendar_path %></li>
+			</ul>
+		</div>
+		<div class="right_footer">
+			<ul>
+				<% if current_user.nil? %>
+					<li><%= link_to "Log In", new_user_session_path %></li>
+				<% else %>
+					<li><%= link_to "Sign Out", destroy_user_session_path, method: "DELETE" %></li>
+				<% end %>
+			</ul>
+		</div>
+	</div>
+
+</body>
+</html>
