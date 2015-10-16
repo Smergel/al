@@ -10,16 +10,18 @@
 </div>
 <div class="container">
 	<div class="row albums">
-		<% @posts_sorted.sort_by(&:date).reverse.each do |x| %>
-			<div class="col-lg-3 col-sm-6">
-				<ul class="past_album_list">
-					<li>
-						<div class="art"><%= image_tag x.album_art %></div>
-						<%= link_to x.band_name.first(22), "posts/#{x.id}" %><br />
-						<%= link_to x.album_name.first(22), "posts/#{x.id}" %>
-					</li>
-				</ul>
-			</div>
+		<% if !@posts_sorted.nil? %>
+			<% @posts_sorted.sort_by(&:date).reverse.each do |x| %>
+				<div class="col-lg-3 col-sm-6">
+					<ul class="past_album_list">
+						<li>
+							<div class="art"><%= image_tag x.album_art %></div>
+							<%= link_to x.band_name.first(22), "posts/#{x.id}" %><br />
+							<%= link_to x.album_name.first(22), "posts/#{x.id}" %>
+						</li>
+					</ul>
+				</div>
+			<% end %>
 		<% end %>
 	</div>
 </div>

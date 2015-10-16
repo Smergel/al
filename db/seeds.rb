@@ -43,3 +43,4 @@ album_art: "http://static.stereogum.com/uploads/2015/07/12102942/TameImpala-Curr
 quote: "This is the time!"}
   ])
 
+
