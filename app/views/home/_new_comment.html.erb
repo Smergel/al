@@ -1,8 +1,11 @@
 <%= form_for Comment.new do |f| %>
 	<%= f.hidden_field :post_id, value: @request %>
 	<div class="form-group">
-		<%= f.label "What did you think?", for: "comment" %>
 		<%= f.text_area :comment, class: "form-control", placeholder: "Comment" %>
 	</div>
-	<%= f.submit :Submit, class: "btn btn-default" %>
+	<% if current_user.nil? %>
+		<%= link_to "Log In To Comment", "/users/sign_in", class: "btn btn-default" %>
+	<% else %>
+		<%= f.submit :Submit, class: "btn btn-default" %>
+	<% end %>
 <% end %>

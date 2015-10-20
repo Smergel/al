@@ -1,0 +1,9 @@
+<%= form_for Profile.new, html: { multipart: true } do |f| %>
+	<legend>Profile Info</legend>
+	<div class="field">
+		<%= f.text_field :name, placeholder: "Name" %>
+	</div>
+		<%= f.label "Attach A Picture Of Your Face!" %>
+		<%= f.file_field :avatar %><br />
+	<%= f.submit :Submit, class: "form_btn" %>
+<% end %>

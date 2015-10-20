@@ -4,10 +4,15 @@
 		<legend>Enter A New Pick</legend>
 			<div class="field">
 				<%= f.label "Date" %>
-				<%= f.date_select :date, start_year: 2015 %></div>
+				<%= f.date_select :date, start_year: 2015 %>
+			</div>
 			<div class="field"><%= f.text_field :band_name, placeholder: "Band Name" %></div>
 			<div class="field"><%= f.text_field :album_name, placeholder: "Album Name" %></div>
 			<div class="field"><%= f.text_field :quote, placeholder: "Quote" %></div>
+			<div class="field"><%= f.text_field :genre, placeholder: "Genre" %></div>
+			<div class="field"><%= f.text_field :fav_song, placeholder: "Favorite Song" %></div>
+			<div class="field"><%= f.number_field :tracks, placeholder: "Number of Tracks" %></div>
+			<div class="field"><%= f.number_field :release_year, placeholder: "Release Year" %></div>
 			<div class="field"><%= f.text_field :youtube, placeholder: "Youtube URL" %></div>
 			<div class="field"><%= f.text_field :band_pic, placeholder: "Band Picture URL" %></div>
 			<div class="field"><%= f.text_field :album_art, placeholder: "Album Cover URL" %></div>
@@ -15,3 +20,4 @@
 			<%= f.submit :Submit, class: "form_btn" %>
 	</fieldset>
 <% end %>
+

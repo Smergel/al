@@ -3,10 +3,18 @@ class CommentsController < ApplicationController
   end
 
   def create
+    @count = 0
+    Post.all.sort_by(&:date).reverse.each do |z|
+      if (z.date.past? || z.date.today?) && (@count < 1)
+        @last = z
+        @count += 1
+      end
+    end 
+
     @comment = Comment.new(comment_params)
     @comment.user_id = current_user.id
     if @comment.post_id == nil
-      @comment.post_id = Post.last.id
+      @comment.post_id = @last.id
     end
     respond_to do |format|
       if @comment.save

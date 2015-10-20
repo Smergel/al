@@ -1,10 +1,11 @@
 <div class="container-fluid">
 	<div class="row top">
 		<div class="col-lg-12">
-			<% if !current_user.nil? %>
-			<a href="/history" class="btn btn-default right">Enter Historic Album</a>
+			<% if current_user.nil? %>
+				<a href="/users/sign_in" class="btn btn-default right">Log In To Enter A Historic Album</a>
+			<% else %>
+				<a href="/history" class="btn btn-default right">Enter Historic Album</a>
 			<% end %>
-			<a class="btn btn-default right">Sort By</a>
 		</div>
 	</div>
 </div>
@@ -14,15 +15,15 @@
 			<% @posts_sorted.sort_by(&:date).reverse.each do |x| %>
 				<div class="col-lg-3 col-sm-6">
 					<ul class="past_album_list">
-						<li>
-							<div class="art"><%= image_tag x.album_art %></div>
-							<%= link_to x.band_name.first(22), "posts/#{x.id}" %><br />
-							<%= link_to x.album_name.first(22), "posts/#{x.id}" %>
-						</li>
-					</ul>
+							<li>
+								<div class="art"><%= image_tag x.album_art %></div>
+								<div class="names"><%= link_to x.band_name.first(26), "posts/#{x.id}" %><br />
+								<%= link_to x.album_name.first(26), "posts/#{x.id}" %></div>
+								<div class="user"><%= image_tag User.find(x.user_id).profile.avatar(:thumb) %><span class="blues"><%=User.find(x.user_id).profile.name.capitalize %><span class="datum"><%= x.date.strftime("%D") %></span></span></div>
+							</li>
+						</ul>
 				</div>
 			<% end %>
 		<% end %>
 	</div>
 </div>
-

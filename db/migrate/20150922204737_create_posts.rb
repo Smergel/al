@@ -10,6 +10,10 @@ class CreatePosts < ActiveRecord::Migration
       t.string    :band_pic
       t.string    :album_art
       t.string    :quote
+      t.string    :genre
+      t.integer   :tracks
+      t.string    :fav_song
+      t.integer   :release_year
 
       t.timestamps null: false
     end

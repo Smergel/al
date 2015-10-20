@@ -13,24 +13,29 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @request = params[:id]
     @all_comments = Comment.where(post_id: params[:id])
+
+    gon.youtube = @post.youtube.split("=")[1]
+    gon.artists = @post.band_name
   end
 
   def history
   end
 
   def new
-    if current_user.email = "jelly@fish.com"
-      @dates = []
-      y = 0
-      count = 0
-      loop do 
-        day = Date.new(2015, 11, 9) + y
-        if day.future? || day.today
-          @dates << day
-          count += 1
+    if !current_user.nil? 
+      if current_user.email = "jelly@fish.com"
+        @dates = []
+        y = 0
+        count = 0
+        loop do 
+          day = Date.new(2015, 11, 9) + y
+          if day.future? || day.today
+            @dates << day
+            count += 1
+          end
+          y = y + 70
+          break if count > 4
         end
-        y = y + 70
-        break if count > 4
       end
     end
   end
@@ -61,6 +66,7 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:quote, :band_pic, :album_art, :band_name, :album_name, :write_up, :youtube, :date)
+    params.require(:post).permit(:tracks, :genre, :release_year, :fav_song,
+    :quote, :band_pic, :album_art, :band_name, :album_name, :write_up, :youtube, :date)
   end
 end

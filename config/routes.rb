@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
 
-  devise_for :users
+  devise_for :users, controllers: { registrations: "registrations" }
   resources :posts
   resources :comments
   resources :events
   resources :games
-  
+  resources :profiles
+
   root "home#index"
   get "/history" => "posts#history"
   get "/calendar" => "home#calendar"

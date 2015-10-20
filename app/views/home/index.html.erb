@@ -1,13 +1,14 @@
 <div class="grad">
 	<%= image_tag @post.band_pic %>
 </div>
+<div class="white">
+</div>
 <div class="container">
 	<div class="row top_home">
 		<div class="col-lg-12 rel">
 			<div class="tit">
 				<div class="band"><%= @post.band_name %></div>
 				<div class="album"><%= @post.album_name %></div>
-				<div class="author"><%= User.find(@post.user_id).email %>  |  <%= @post.created_at %></div>
 			</div>
 		</div>
 	</div>
@@ -16,41 +17,57 @@
 			<div class="image_album"><%= image_tag @post.album_art %></div>
 			<div class="write_up"><%= @post.write_up %></div>
 		</div>
-		<div class="col-lg-4">
-			<iframe id="ytplayer" type="text/html" width="100%" src="http://www.youtube.com/embed/<%= @post.youtube.split('=')[1] %>" frameborder="0" ></iframe>
+		<div class="col-lg-4">			
+			<div class="wrap_mini"><iframe id="player" type="text/html" width="100%" height="100%" src="http://www.youtube.com/embed/<%= @post.youtube.split("=")[1] %>" frameborder="0"></iframe></div>
 			<hr />
+			<div class="author"><div class="post_date"><%= image_tag User.find(@post.user_id).profile.avatar.url(:thumb) %><%= @post.date.strftime("%B %u, %Y") %></div></div>
+			<hr />
+			<h4>Band: <%= @post.band_name %></h4>
+			<h4>Album: <%= @post.album_name %></h4>
+			<h4>Genre: <%= @post.genre %></h4>
+			<h4>Release Year: <%= @post.release_year %></h4>
+			<h4>Tracks: <%= @post.tracks %></h4>
+			<h4>Favorite Song: <%= @post.fav_song %></h4>
+		</div>
+	</div>
+	<div class="row center">
+		<div class="col-lg-12">
+			<h1 class="quote"><%= @post.quote %></h1>
+		</div>
+	</div>
+	<div class="row bottom">
+		<div class="col-lg-12">
+			<legend>What did you think about <%= @post.band_name %>?</legend>
 			<div class="comments">
 				<%= render "new_comment" %><hr />
 				<ul class="comment_list">
 					<% @all_comments.each do |x| %>
 						<li class="comment_item">
-							<span class="commentor"><em><%= User.find(x.user_id).email %>  |  <%=x.created_at %></em></span><br />
-							<%= x.comment %><hr />
+							<span class="commentor"><em><%= image_tag User.find(x.user_id).profile.avatar.url(:thumb) %>    <%=x.created_at.strftime("%D") %></em></span><br />
+							<div class="commented"><%= x.comment %></div><hr />
 						</li>
 					<% end %>
 				</ul>
 			</div>
 		</div>
 	</div>
-	<div class="row center bottom">
-		<div class="col-lg-12">
-			<div class="quote"><%= @post.quote %></div>
-		</div>
-	</div>
 	<div class="row bottom">
-		<% if !@post.nil? %>
-			<% @posts.reverse.last(4)[1..3].each do |x| %>
-				<div class="col-lg-4">
-					<ul class="past_album_list">
-						<li>
-							<div class="art"><%= image_tag x.album_art %></div>
-							<%= link_to x.band_name.first(22), "posts/#{x.id}" %><br />
-							<%= link_to x.album_name.first(22), "posts/#{x.id}" %>
-						</li>
-					</ul>
-				</div>
+		<div class="col-lg-12">
+			<legend>In case you missed them...</legend>
+			<% if !@posts.nil? %>
+				<% @posts_sorted[1..5].each do |x| %>
+					<div class="col-lg-3 spacer2">
+						<ul class="past_album_list">
+							<li>
+								<div class="art"><%= image_tag x.album_art %></div>
+								<div class="names"><%= link_to x.band_name.first(26), "posts/#{x.id}" %><br />
+								<%= link_to x.album_name.first(26), "posts/#{x.id}" %></div>
+							</li>
+						</ul>
+					</div>
+				<% end %>
 			<% end %>
-		<% end %>
+		</div>
 	</div>
 </div>
 

@@ -1,7 +1,6 @@
 <div class="container-fluid">
 	<div class="row top">
 		<div class="col-lg-12">
-			<a href="/events/new" class="btn btn-default right">Create A List</a>
 			<a href="/leaderboard" class="btn btn-default right">Leaderboard</a>
 		</div>
 	</div>
@@ -9,9 +8,8 @@
 <div class="container">
 	<div class="row game">
 		<div class="col-lg-7">
-			<!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
-		    <div id="player"></div>
-		    <div class="hider">Hard Mode Is On<br />To turn if off click the difficulty toggle.</div>
+		    <div class="wrap_game"><div id="player"></div></div>
+		    <div class="hider"><img src="/assets/AElogo.svg" height="65" /></div>
 		    <div id="game_over">Game Over</div>
 		</div>
 		<div class="col-lg-5">
@@ -25,7 +23,6 @@
 					</ul>
 				</div></li>
 			</ul>
-			<div class="current_time">Your Time Is: <span id="time">0:00:00</span></div>
 			<div id="your_score" class="current_score">Your Score Is: <span id="score">...</span></div>
 			<input type="text" id="guess" placeholder="Guess The Artist..." />
 		    <button onclick="submit()" href="javascript:;" id="submit_guess">Submit</button>
@@ -33,32 +30,31 @@
 	</div>
 </div>
 <script>
-	  var tag = document.createElement('script');
-	  tag.src = "https://www.youtube.com/iframe_api";
-	  var firstScriptTag = document.getElementsByTagName('script')[0];
-	  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+  var tag = document.createElement('script');
+  tag.src = "https://www.youtube.com/iframe_api";
+  var firstScriptTag = document.getElementsByTagName('script')[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-	  var player;
-	  function onYouTubePlayerAPIReady() {
-	    player = new YT.Player('player', {
-	      height: '400px',
-	      width: '600px',
-	      playerVars: {
-	        showinfo: 0,
-	        controls: 0, 
-	        minimalbranding: 0,
-	        disablekb: 0
-	      },
-	     loadPlaylist:{
-	        listType:'playlist',
-	        list:gon.youtube,
-	        index:parseInt(0),
-	        suggestedQuality:'small'
-	     },
-	      events: {
-	        'onReady': onPlayerReady,
-	        'onStateChange': onPlayerStateChange
-	      }
-	    });
-	  }
-	</script>
+  var player;
+  function onYouTubePlayerAPIReady() {
+    player = new YT.Player('player', {
+      autoplay: 0,
+      playerVars: {
+        showinfo: 0,
+        controls: 0, 
+        minimalbranding: 0,
+        disablekb: 0
+      },
+     loadPlaylist:{
+        listType:'playlist',
+        list:gon.youtube,
+        index:parseInt(0),
+        suggestedQuality:'small'
+     },
+      events: {
+        'onReady': onPlayerReady,
+        'onStateChange': onPlayerStateChange
+      }
+    });
+  }
+</script>
