@@ -16,7 +16,7 @@
 				<div class="col-lg-3 col-sm-6">
 					<ul class="past_album_list">
 							<li>
-								<div class="art"><%= image_tag x.album_art %></div>
+								<div class="art"><%= link_to (image_tag x.album_art), "posts/#{x.id}" %></div>
 								<div class="names"><%= link_to x.band_name.first(26), "posts/#{x.id}" %><br />
 								<%= link_to x.album_name.first(26), "posts/#{x.id}" %></div>
 								<div class="user"><%= image_tag User.find(x.user_id).profile.avatar(:thumb) %><span class="blues"><%=User.find(x.user_id).profile.name.capitalize %><span class="datum"><%= x.date.strftime("%D") %></span></span></div>

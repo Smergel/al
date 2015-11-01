@@ -5,7 +5,7 @@
 </div>
 <div class="container">
   <div class="row form_space">
-    <div class="col-lg-6">
+    <div class="col-lg-4">
       <legend>Member's Log In</legend>
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="field">
@@ -21,14 +21,17 @@
             <%= f.label :remember_me %>
             <%= f.check_box :remember_me %>
           </div>
-        <% end %><br />
-
+        <% end %>
         <div class="actions">
           <%= f.submit "Log in", class: "form_btn" %>
         </div>
+        <br />
       <% end %>
-
+      <!-- <br /> -->
       <%= render "devise/shared/links" %>
+    </div>
+    <div class="col-lg-8">
+      <img src="http://www.petspyjamas.com/uploads/2013/07/does-your-pet-like-listening-to-music-4.jpg" />
     </div>
   </div>
 </div>

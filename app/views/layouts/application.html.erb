@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>AlbumExchange</title>
+  <title>albumExchange</title>
   <%= Gon::Base.render_data %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -32,7 +32,10 @@
 				<% if current_user.nil? %>
 					<li><%= link_to "Log In", new_user_session_path %></li>
 				<% else %>
-					<li><%= link_to "Sign Out", destroy_user_session_path, method: "DELETE" %></li>
+					<li><%= link_to "Manage Posts", profile_path(current_user) %></li>
+					<% if !User.find(current_user.id).profile.nil? %>
+						<%= link_to (image_tag User.find(current_user.id).profile.avatar(:thumb)), destroy_user_session_path, method: "DELETE", class: "photo" %>
+					<% end %>
 				<% end %>
 			</ul>
 		</div>

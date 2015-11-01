@@ -1,2 +1,30 @@
-<h1>Posts#edit</h1>
-<p>Find me in app/views/posts/edit.html.erb</p>
+<div class="container-fluid">
+	<div class="row top">
+		
+	</div>
+</div>
+<div class="container">
+	<div class="row">
+		<div class="col-lg-6 form_space">
+			<%= form_for @post do |f| %>
+				<legend>Edit Pick</legend>
+				<div class="field">
+					<%= f.label "Date" %>
+					<%= f.date_select :date, start_year: 2015 %>
+				</div>
+				<div class="field"><%= f.text_field :band_name, placeholder: "Band Name" %></div>
+				<div class="field"><%= f.text_field :album_name, placeholder: "Album Name" %></div>
+				<div class="field"><%= f.text_field :quote, placeholder: "Quote" %></div>
+				<div class="field"><%= f.text_field :genre, placeholder: "Genre" %></div>
+				<div class="field"><%= f.text_field :fav_song, placeholder: "Favorite Song" %></div>
+				<div class="field"><%= f.number_field :tracks, placeholder: "Number of Tracks" %></div>
+				<div class="field"><%= f.number_field :release_year, placeholder: "Release Year" %></div>
+				<div class="field"><%= f.text_field :youtube, placeholder: "Youtube URL" %></div>
+				<div class="field"><%= f.text_field :band_pic, placeholder: "Band Picture URL" %></div>
+				<div class="field"><%= f.text_field :album_art, placeholder: "Album Cover URL" %></div>
+				<%= f.text_area :write_up, placeholder: "Write Up" %><br />
+				<%= f.submit :Submit, class: "form_btn" %>
+				<% end %>
+		</div>
+	</div>
+</div>

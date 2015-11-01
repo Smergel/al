@@ -43,7 +43,7 @@
 				<ul class="comment_list">
 					<% @all_comments.each do |x| %>
 						<li class="comment_item">
-							<span class="commentor"><em><%= image_tag User.find(x.user_id).profile.avatar.url(:thumb) %>    <%=x.created_at.strftime("%D") %></em></span><br />
+							<span class="commentor"><%= image_tag User.find(x.user_id).profile %></span><br />
 							<div class="commented"><%= x.comment %></div><hr />
 						</li>
 					<% end %>
@@ -51,15 +51,15 @@
 			</div>
 		</div>
 	</div>
-	<div class="row bottom">
+	<div class="row">
 		<div class="col-lg-12">
 			<legend>In case you missed them...</legend>
 			<% if !@posts.nil? %>
 				<% @posts_sorted[1..5].each do |x| %>
-					<div class="col-lg-3 spacer2">
+					<div class="col-lg-3">
 						<ul class="past_album_list">
 							<li>
-								<div class="art"><%= image_tag x.album_art %></div>
+								<div class="art"><%= link_to (image_tag x.album_art), "posts/#{x.id}" %></div>
 								<div class="names"><%= link_to x.band_name.first(26), "posts/#{x.id}" %><br />
 								<%= link_to x.album_name.first(26), "posts/#{x.id}" %></div>
 							</li>
@@ -69,6 +69,10 @@
 			<% end %>
 		</div>
 	</div>
+	<div class="row">
+		<div class="col-lg-12 btm_logo">
+			<img src="/assets/AElogo.svg" />
+		</div>
+	</div>
 </div>
-
  

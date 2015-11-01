@@ -1,5 +1,6 @@
 class ProfilesController < ApplicationController
   def show
+    @posts = Post.where(user_id: current_user.id).sort_by(&:date).reverse
   end
 
   def edit

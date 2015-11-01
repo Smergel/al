@@ -1,2 +1,46 @@
-<h1>Profiles#show</h1>
-<p>Find me in app/views/profiles/show.html.erb</p>
+<div class="container-fluid">
+	<div class="row top">
+		
+	</div>
+</div>
+<div class="container">
+	<div class="col-lg-6 form_space">
+		<table class="edit_posts">
+			<legend>Upcoming Posts</legend>
+			<tr>
+				<th>Date</th>
+				<th>Band</th>
+				<th></th>
+			</tr>
+			<% @posts.each do |x| %>
+				<tr>
+					<% if x.date.future? %>
+							<td><%= x.date.strftime("%D") %></td>
+							<td><%= x.band_name %></td>
+							<td><%= link_to "Edit", edit_post_path(x) %></td>
+							<td><%= link_to "Delete", "/posts/#{x.id}", method: "DELETE" %></td>
+					<% end %>
+				</tr>
+			<% end %>
+		</table>
+	</div>
+	<div class="col-lg-6 form_space">
+		<table class="edit_posts">
+			<legend>Past Posts</legend>
+			<tr>
+				<th>Date</th>
+				<th>Band</th>
+				<th></th>
+			</tr>
+			<% @posts.each do |x| %>
+				<tr>
+					<% if x.date.past? || x.date.today? %>
+							<td><%= x.date.strftime("%D") %></td>
+							<td><%= x.band_name %></td>
+							<td><%= link_to "Edit", edit_post_path(x) %></td>
+					<% end %>
+				</tr>
+			<% end %>
+		</table>
+	</div>
+</div>
