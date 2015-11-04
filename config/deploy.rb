@@ -1,9 +1,9 @@
 # Change these
-server 'your_server_ip', port: your_port_num, roles: [:web, :app, :db], primary: true
+server '104.236.254.38', port: 80, roles: [:web, :app, :db], primary: true
 
-set :repo_url,        'git@example.com:username/appname.git'
-set :application,     'appname'
-set :user,            'deploy'
+set :repo_url,        'https://github.com/Smergel/albumExchange.git'
+set :application,     'albumExchange'
+set :user,            'dep'
 set :puma_threads,    [4, 16]
 set :puma_workers,    0
 
