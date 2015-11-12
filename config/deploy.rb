@@ -1,5 +1,5 @@
 # Change these
-server '104.236.254.38', port: 80, roles: [:web, :app, :db], primary: true
+server '104.236.254.38', port: 22, roles: [:web, :app, :db], primary: true
 
 set :repo_url,        'https://github.com/Smergel/albumExchange.git'
 set :application,     'albumExchange'

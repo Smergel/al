@@ -29,7 +29,7 @@ class PostsController < ApplicationController
         count = 0
         loop do 
           day = Date.new(2015, 11, 9) + y
-          if day.future? || day.today
+          if day.future? || day.today?
             @dates << day
             count += 1
           end

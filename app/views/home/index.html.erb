@@ -43,7 +43,6 @@
 				<ul class="comment_list">
 					<% @all_comments.each do |x| %>
 						<li class="comment_item">
-							<span class="commentor"><%= image_tag User.find(x.user_id).profile %></span><br />
 							<div class="commented"><%= x.comment %></div><hr />
 						</li>
 					<% end %>
