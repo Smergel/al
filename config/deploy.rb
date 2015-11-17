@@ -1,5 +1,5 @@
 set :application, 'albumExchange'
-set :repo_url, 'git@github.com:excid3/albumExchange.git'
+set :repo_url, 'git@github.com:Smergel/albumExchange.git'
 
 set :deploy_to, '/home/deploy/albumExchange'
 
