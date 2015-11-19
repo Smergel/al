@@ -2,7 +2,7 @@
 server '107.170.1.81', port: 80, roles: [:web, :app, :db], primary: true
 
 set :repo_url,        'git@github.com:Smergel/albumExchange.git'
-set :application,     'AE'
+set :application,     'albumExchange'
 set :user,            'deploy'
 set :puma_threads,    [4, 16]
 set :puma_workers,    0
