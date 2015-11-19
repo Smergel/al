@@ -18,11 +18,11 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: my_database_production
+  database: albumExchange_database
 
 production:
   adapter: postgresql
-  database: my_database_production
+  database: albumExchange_database
   pool: 5
   timeout: 5000
   host: localhost
