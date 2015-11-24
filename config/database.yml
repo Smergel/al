@@ -22,9 +22,6 @@ test:
 
 production:
   adapter: postgresql
-  database: albumExchange_database
   pool: 5
   timeout: 5000
   host: localhost
-  username: exchanger
-  password: exchange42qq
