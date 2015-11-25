@@ -36,16 +36,16 @@ gem 'puma'
 # gem "unicorn"
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-group :production do 
+# group :production do 
 
-  gem 'pg', '0.18.2'
+#   gem 'pg', '0.18.2'
 
-end
+# end
+gem 'sqlite3'
 
 group :development do
 
   # Use sqlite3 as the database for Active Record
-  gem 'sqlite3'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
 
