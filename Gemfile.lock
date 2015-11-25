@@ -58,9 +58,6 @@ GEM
     capistrano-rails (1.1.5)
       capistrano (~> 3.1)
       capistrano-bundler (~> 1.1)
-    capistrano-rvm (0.1.2)
-      capistrano (~> 3.0)
-      sshkit (~> 1.2)
     capistrano3-puma (1.2.1)
       capistrano (~> 3.0)
       puma (>= 2.6)
@@ -123,7 +120,6 @@ GEM
       cocaine (~> 0.5.5)
       mime-types
       mimemagic (= 0.3.0)
-    pg (0.18.2)
     puma (2.14.0)
     rack (1.6.4)
     rack-test (0.6.3)
@@ -203,10 +199,7 @@ PLATFORMS
 DEPENDENCIES
   bootstrap-sass
   byebug
-  capistrano
-  capistrano-bundler
   capistrano-rails
-  capistrano-rvm
   capistrano3-puma
   coffee-rails (~> 4.1.0)
   devise
@@ -214,8 +207,6 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   paperclip
-  pg (= 0.18.2)
-  puma
   rails (= 4.2.3)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
