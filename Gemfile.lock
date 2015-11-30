@@ -125,6 +125,7 @@ GEM
       cocaine (~> 0.5.5)
       mime-types
       mimemagic (= 0.3.0)
+    pg (0.18.4)
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -203,9 +204,9 @@ PLATFORMS
 DEPENDENCIES
   bootstrap-sass
   byebug
-  capistrano
-  capistrano-bundler
-  capistrano-rails
+  capistrano (~> 3.1.0)
+  capistrano-bundler (~> 1.1.2)
+  capistrano-rails (~> 1.1.1)
   capistrano-rbenv!
   coffee-rails (~> 4.1.0)
   devise
@@ -213,6 +214,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   paperclip
+  pg
   rails (= 4.2.3)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)

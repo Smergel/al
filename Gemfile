@@ -1,5 +1,4 @@
 source 'https://rubygems.org'
-ruby "2.2.3"
 
 gem 'gon'
 
@@ -36,17 +35,22 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem "unicorn"
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-# group :production do 
 
-#   gem 'pg', '0.18.2'
-
-# end
-gem 'capistrano'
-gem 'capistrano-bundler'
-gem 'capistrano-rails'
+gem 'capistrano', '~> 3.1.0'
+gem 'capistrano-bundler', '~> 1.1.2'
+gem 'capistrano-rails', '~> 1.1.1'
 
 # Add this if you're using rbenv
 gem 'capistrano-rbenv', github: "capistrano/rbenv"
+
+group :production do 
+
+  gem 'pg'
+
+end
+
+
+# Add this if you're using rbenv
 
 group :development do
 
