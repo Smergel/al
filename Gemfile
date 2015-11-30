@@ -36,12 +36,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-gem 'capistrano', '~> 3.1.0'
-gem 'capistrano-bundler', '~> 1.1.2'
-gem 'capistrano-rails', '~> 1.1.1'
-
-# Add this if you're using rbenv
-gem 'capistrano-rbenv', github: "capistrano/rbenv"
 
 group :production do 
 
@@ -53,6 +47,13 @@ end
 # Add this if you're using rbenv
 
 group :development do
+
+	gem 'capistrano', '~> 3.1.0'
+	gem 'capistrano-bundler', '~> 1.1.2'
+	gem 'capistrano-rails', '~> 1.1.1'
+
+	# Add this if you're using rbenv
+	gem 'capistrano-rbenv', github: "capistrano/rbenv"
 
   # Use sqlite3 as the database for Active Record
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
