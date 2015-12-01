@@ -21,8 +21,10 @@ test:
   database: db/test.postgresql
 
 production:
-  <<: *default
-  database: db/production.postgresql
-  host: localhost
+  adapter: postgresql
+  encoding: unicode
+  database: exchange_production
   username: exchange
   password: exchange42qq
+  host: localhost
+  port: 5432
