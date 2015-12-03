@@ -1,7 +1,7 @@
 lock '3.4.0'
 
 set :application, 'albumExchange'
-set :repo_url, 'git@github.com:Smergel/albumExchange.git' # Edit this to match your repository
+set :repo_url, 'git@github.org:Smergel/albumExchange.git'  # Edit this to match your repository
 set :branch, :master
 set :deploy_to, '/home/deploy/albumExchange'
 set :pty, true
@@ -9,7 +9,7 @@ set :linked_files, %w{config/database.yml config/application.yml}
 set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system public/uploads}
 set :keep_releases, 5
 set :rvm_type, :user
-set :rvm_ruby_version, 'jruby-1.7.19' # Edit this if you are using MRI Ruby
+set :rvm_ruby_version, 'ruby-2.2.3'  # Edit this to match ruby version you use
 
 set :puma_rackup, -> { File.join(current_path, 'config.ru') }
 set :puma_state, "#{shared_path}/tmp/pids/puma.state"

@@ -48,10 +48,10 @@ end
 group :development do
 
 	gem 'capistrano'
-	gem 'capistrano3-puma'
-	gem 'capistrano-rails', require: false
-	gem 'capistrano-bundler', require: false
-	gem 'capistrano-rvm'
+  gem 'capistrano3-puma'
+  gem 'capistrano-rails', require: false
+  gem 'capistrano-bundler', require: false
+  gem 'capistrano-rvm'
 
   # Use sqlite3 as the database for Active Record
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
