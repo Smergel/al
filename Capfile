@@ -3,11 +3,10 @@ require 'capistrano/setup'
 
 # Include default deployment tasks
 require 'capistrano/deploy'
-require 'capistrano/bundler'
-require 'capistrano/rvm'
-require 'capistrano/rails/assets' # for asset handling add
-require 'capistrano/rails/migrations' # for running migrations
-require 'capistrano/puma'
+# require 'capistrano/rbenv'
+
+set :rbenv_type, :user
+set :rbenv_ruby, "2.2.2-p95"
 
 # Include tasks from other gems included in your Gemfile
 #
@@ -21,10 +20,9 @@ require 'capistrano/puma'
 #   https://github.com/capistrano/passenger
 #
 # require 'capistrano/rvm'
-# require 'capistrano/rbenv'
 # require 'capistrano/chruby'
-# require 'capistrano/bundler'
-# require 'capistrano/rails/assets'
+require 'capistrano/bundler'
+require 'capistrano/rails'
 # require 'capistrano/rails/migrations'
 # require 'capistrano/passenger'
 
