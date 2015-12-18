@@ -1,62 +1,15 @@
-# config valid only for current version of Capistrano
 lock '3.4.0'
 
-# set :application, 'albumExchange'
-# set :repo_url, 'git@github.com:Smergel/albumExchange.git'
-
-# # Default branch is :master
-# # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
-
-# # Default deploy_to directory is /var/www/my_app_name
-# set :deploy_to, '/home/deploy/albumExchange'
-
-# # Default value for :scm is :git
-# # set :scm, :git
-
-# # Default value for :format is :pretty
-# # set :format, :pretty
-
-# # Default value for :log_level is :debug
-# # set :log_level, :debug
-
-# # Default value for :pty is false
-# # set :pty, true
-
-# # Default value for :linked_files is []
-# # set :linked_files, fetch(:linked_files, []).push('config/database.yml', 'config/secrets.yml')
-
-# # Default value for linked_dirs is []
-# # set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system')
-
-# # Default value for default_env is {}
-# # set :default_env, { path: "/opt/ruby/bin:$PATH" }
-
-# # Default value for keep_releases is 5
-# # set :keep_releases, 5
-
-# namespace :deploy do
-
-#   after :restart, :clear_cache do
-#     on roles(:web), in: :groups, limit: 3, wait: 10 do
-#       # Here we can do anything such as:
-#       # within release_path do
-#       #   execute :rake, 'cache:clear'
-#       # end
-#     end
-#   end
-
-# end
-
-set :application, 'albumExchange'
-set :repo_url, 'https://github.com/Smergel/albumExchange.git'#'git@github.org:Smergel/albumExchange.git'  # Edit this to match your repository
+set :application, 'contactbook'
+set :repo_url, 'git@github.com:devdatta/contactbook.git' # Edit this to match your repository
 set :branch, :master
-set :deploy_to, '/home/deploy/albumExchange'
+set :deploy_to, '/home/deploy/contactbook'
 set :pty, true
 set :linked_files, %w{config/database.yml config/application.yml}
 set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system public/uploads}
 set :keep_releases, 5
 set :rvm_type, :user
-set :rvm_ruby_version, 'ruby-2.2.3'  # Edit this to match ruby version you use
+set :rvm_ruby_version, 'jruby-1.7.19' # Edit this if you are using MRI Ruby
 
 set :puma_rackup, -> { File.join(current_path, 'config.ru') }
 set :puma_state, "#{shared_path}/tmp/pids/puma.state"

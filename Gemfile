@@ -36,8 +36,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 # Add this if you're using rbenv
-	# gem 'figaro'
-	# gem 'puma'
+
+  gem 'figaro'
+  gem 'puma'
 
 group :production do 
 
@@ -45,18 +46,14 @@ group :production do
 
 end
 
-  gem 'figaro'
-  gem 'puma'
+
 
 group :development do
+  gem 'capistrano'
   gem 'capistrano3-puma'
   gem 'capistrano-rails', require: false
   gem 'capistrano-bundler', require: false
-
-	gem 'capistrano', '~> 3.1.0'
-
-# Add this if you're using rbenv
-  gem 'capistrano-rbenv', github: "capistrano/rbenv"
+  gem 'capistrano-rvm'
 
 # Add this if you're using rvm
 # gem 'capistrano-rvm', github: "capistrano/rvm"
