@@ -1,3 +1,4 @@
+SECRET_KEY_BASE: "cf0f7d86ef35671087783c7f45f9cd3667d4d0f3aacbdd96261126df1687fe092be0222a7f1812586a0104a7187c7d0e401693ba1dc6f4a4e98c6702407371d8"
 # Add configuration values here, as shown below.
 #
 # pusher_app_id: "2954"
