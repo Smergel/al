@@ -54,7 +54,6 @@ group :development do
   gem 'capistrano-rails', require: false
   gem 'capistrano-bundler', require: false
   gem 'capistrano-rvm'
-  gem 'rvm-capistrano'
 
 # Add this if you're using rvm
 # gem 'capistrano-rvm', github: "capistrano/rvm"

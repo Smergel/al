@@ -10,7 +10,6 @@ require 'capistrano/rails/assets' # for asset handling add
 require 'capistrano/rails/migrations' # for running migrations
 require 'capistrano/puma'
 
-load 'deploy/assets'
 
 # Include tasks from other gems included in your Gemfile
 #
