@@ -1,5 +1,9 @@
 lock '3.4.0'
 
+require "bundler/capistrano"
+require "rvm/capistrano"
+before "deploy:assets:precompile", "bundle:install"
+
 set :application, 'albumExchange'
 set :repo_url, 'git@github.com:Smergel/albumExchange.git' # Edit this to match your repository
 set :branch, :master
