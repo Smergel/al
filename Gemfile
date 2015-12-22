@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'gon'
 
-gem 'bootstrap-sass'
+# gem 'bootstrap-sass'
 
 gem 'devise'
 
