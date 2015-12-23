@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.2.1'
 
 gem 'gon'
 
@@ -37,8 +38,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 # Add this if you're using rbenv
 
-  gem 'figaro'
-  gem 'puma'
+gem 'figaro'
+gem 'puma'
 
 group :production do 
 
