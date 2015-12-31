@@ -24,6 +24,7 @@ production:
   adapter: postgresql
   encoding: unicode
   database: exchange_production
+  pool: 5
   username: exchange
   password: exchange42qq
   host: localhost

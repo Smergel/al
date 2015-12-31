@@ -38,22 +38,17 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 # Add this if you're using rbenv
 
-gem 'puma'
 
 group :production do 
 
   gem 'pg'
+  gem 'puma'
 
 end
 
 
 
 group :development do
-    gem 'capistrano',         require: false
-    gem 'capistrano-rvm',     require: false
-    gem 'capistrano-rails',   require: false
-    gem 'capistrano-bundler', require: false
-    gem 'capistrano3-puma',   require: false
 
 # Add this if you're using rvm
 # gem 'capistrano-rvm', github: "capistrano/rvm"
