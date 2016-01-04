@@ -20,3 +20,6 @@ test:
   <<: *default
   database: db/test.postgresql
 
+production:
+  <<: *default
+  database: db/production.postgresql

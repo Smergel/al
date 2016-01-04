@@ -6,9 +6,10 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-module AlbumExchange
+module ReasonableStandard
   class Application < Rails::Application
 
+    config.assets.initialize_on_precompile = false
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
@@ -23,15 +24,5 @@ module AlbumExchange
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
-
-    ActionMailer::Base.smtp_settings = {
-      address: 'smtp.mandrillapp.com',
-      port: 587,
-      authentication: "plain",
-      host: 'localhost',
-      enable_starttls_auto: true,
-      user_name: "jacob.smergel@gmail.com",
-      password: "s_r9m4zhVERqRQTkQZ-OYA"
-    }
   end
 end
