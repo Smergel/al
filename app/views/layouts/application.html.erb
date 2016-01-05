@@ -31,9 +31,9 @@
 			<ul>
 				<% if current_user.nil? %>
 					<li><%= link_to "Log In", new_user_session_path %></li>
-					<li><%= link_to "log out", destroy_user_session_path, method: "DELETE" %></li>
 				<% else %>
 					<li><%= link_to "Manage Posts", profile_path(current_user) %></li>
+					<li><%= link_to "log out", destroy_user_session_path, method: "DELETE" %></li>
 					<% if !User.find(current_user.id).profile.nil? %>
 						<%= link_to (image_tag User.find(current_user.id).profile.avatar(:thumb)), destroy_user_session_path, method: "DELETE", class: "photo" %>
 					<% end %>
