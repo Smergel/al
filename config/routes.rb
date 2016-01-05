@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  get '/' => 'posts#index'
+  get '/' => 'home#index'
   get 'calendar' => 'home#calendar'
   get 'leaderboard' => 'home#leaderboard'
+  get '/history' => 'posts#history'
 
   resources :users
   resources :posts
