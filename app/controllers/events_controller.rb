@@ -11,7 +11,7 @@ class EventsController < ApplicationController
     @event = Event.new(event_params)
     respond_to do |format|
       if @event.save
-        UserSignup.signup(@email, @event).deliver
+#        UserSignup.signup(@email, @event).deliver
         format.html { redirect_to "/calendar", notice: "Event Created" }
       else
         format.html { render :new }

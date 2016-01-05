@@ -43,6 +43,7 @@
 				<ul class="comment_list">
 					<% @all_comments.each do |x| %>
 						<li class="comment_item">
+							<span class="commentor"><em><%= image_tag User.find(x.user_id).profile.avatar.url(:thumb) %>    <%=x.created_at.strftime("%D") %></em></span><br />
 							<div class="commented"><%= x.comment %></div><hr />
 						</li>
 					<% end %>
@@ -68,10 +69,10 @@
 			<% end %>
 		</div>
 	</div>
-	<div class="row">
+	<!-- <div class="row">
 		<div class="col-lg-12 btm_logo">
 			<img src="/assets/AElogo.svg" />
 		</div>
-	</div>
+	</div> -->
 </div>
  

@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   get '/' => 'home#index'
   get 'calendar' => 'home#calendar'
+  post '/calendar' => 'home#calendar'
   get 'leaderboard' => 'home#leaderboard'
   get '/history' => 'posts#history'
 
