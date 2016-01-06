@@ -22,7 +22,7 @@ class HomeController < ApplicationController
 
     @posts_sorted = []
     Post.all.sort_by(&:date).reverse.each do |y|
-      if (y.date.past? || y.date.today?) && (@count < 5)
+      if (y.date.past? || y.date.today?) && (@count <= 5)
         @posts_sorted << y
         @count += 1
       end
