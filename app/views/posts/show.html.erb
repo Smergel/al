@@ -9,6 +9,7 @@
 			<div class="tit">
 				<div class="band"><%= @post.band_name %></div>
 				<div class="album"><%= @post.album_name %></div>
+				<div class="inform_me"><%= User.find(@post.user_id).profile.name.capitalize %>'s Pick, <%= @post.date.strftime("%D") %> </div>
 			</div>
 		</div>
 	</div>

@@ -20,6 +20,7 @@ $c3: #f3f3f3;
 $cb: #a4a4a4;
 $time: 1.5s;
 $x: 14.285%;
+$fontFooter: "Gill Sans", "Gadugi", Sans-Serif;
 
 body {
 	width: 100%;
@@ -46,7 +47,7 @@ body {
 	z-index: 999;
 	color: $c2;
 	font-size: 1.2em;
-	font-family: "Gill Sans";
+	font-family: $fontFooter;
 	border-top: 1px solid $cb;
 
 	.left_footer {
@@ -73,7 +74,7 @@ body {
 		float: right;
 
 		.photo {
-			margin: 0px 30px;
+			margin-right: 30px;
 			
 			img {
 				border-radius: 40px;
@@ -180,6 +181,7 @@ body {
 				border-radius: 50px;
 				height: 35px;
 				width: 35px;
+				margin-top: -4px;
 			}
 		}
 	}
@@ -202,17 +204,17 @@ body {
 	height: 100vh;
 }
 .stuff {
-	margin: 55px 0px 25px 0px;
+	margin: 40px 0px 25px 0px;
 }
 .bottom {
-	margin: 25px 0px 75px 0px;
+	margin: 45px 0px 75px 0px;
 }
 .center {
 	text-align: center;
 }
 .quote {
 	font-size: 3em;
-	font-weight: 100;
+	font-weight: 800;
 	font-family: "Futura";
 	color: darkred;
 	font-style: italic;
@@ -231,9 +233,12 @@ body {
 	font-size: 24px;
 	font-weight: 500;
 }
-// Post Show Page ------------------------
+// Post Index Page ------------------------
 .datum {
 	margin-left: 5px;
+}
+.user img {
+	margin-top: -3px !important;
 }
 
 // Past Album Page ------
@@ -248,7 +253,7 @@ body {
 }
 .albums {
 	margin-top: 50px;
-	margin-bottom: 50px;
+	margin-bottom: 70px;
 }
 .past_album_list {
 	list-style-type: none;

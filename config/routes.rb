@@ -1,13 +1,14 @@
 Rails.application.routes.draw do
-  devise_for :users
+  
 
-  get '/' => 'home#index'
+  root 'home#index'
   get 'calendar' => 'home#calendar'
   post '/calendar' => 'home#calendar'
   get 'leaderboard' => 'home#leaderboard'
   get '/history' => 'posts#history'
 
-  resources :users
+  devise_for :users, :controllers => {:registrations => "registrations"}
+
   resources :posts
   resources :comments
   resources :profiles
