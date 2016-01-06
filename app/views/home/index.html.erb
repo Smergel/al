@@ -9,6 +9,7 @@
 			<div class="tit">
 				<div class="band"><%= @post.band_name %></div>
 				<div class="album"><%= @post.album_name %></div>
+				<div class="inform_me">Date: </div>
 			</div>
 		</div>
 	</div>
@@ -51,11 +52,11 @@
 			</div>
 		</div>
 	</div>
-	<div class="row">
+	<div class="row bottom">
 		<div class="col-lg-12">
 			<legend>In case you missed them...</legend>
 			<% if !@posts.nil? %>
-				<% @posts_sorted[1..5].each do |x| %>
+				<% @posts_sorted.each do |x| %>
 					<div class="col-lg-3">
 						<ul class="past_album_list">
 							<li>
