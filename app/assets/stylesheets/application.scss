@@ -171,17 +171,22 @@ body {
 
 	.comment_item {
 
-		.commented {
-			text-indent: 40px;
-		}
-		.commentor {
-			color: #a7a7a7;
-
+		.left_comment {
+			float: left;
+			
 			img {
-				border-radius: 50px;
 				height: 35px;
 				width: 35px;
-				margin-top: -4px;
+				border-radius: 50px;
+			}
+		}
+		.right_comment {
+
+			.comment_date {
+				color: #a7a7a7;
+			}
+			span {
+				margin-left: 15px;
 			}
 		}
 	}
@@ -253,11 +258,10 @@ body {
 }
 .albums {
 	margin-top: 50px;
-	margin-bottom: 70px;
 }
 .past_album_list {
 	list-style-type: none;
-	margin-bottom: 50px;
+	margin-bottom: 90px;
 	padding: 0px;
 	text-align: center;
 
