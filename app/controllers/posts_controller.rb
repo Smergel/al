@@ -23,12 +23,68 @@ class PostsController < ApplicationController
 
   def new
     if !current_user.nil? 
-      if current_user.email = "jelly@fish.com"
+      if current_user.email == "jacob.smergel@gmail.com"
         @dates = []
         y = 0
         count = 0
         loop do 
           day = Date.new(2015, 11, 9) + y
+          if day.future? || day.today?
+            @dates << day
+            count += 1
+          end
+          y = y + 70
+          break if count > 4
+        end
+      end
+      if current_user.email == "wmconlow@gmail.com"
+        @dates = []
+        y = 0
+        count = 0
+        loop do 
+          day = Date.new(2016, 2, 1) + y
+          if day.future? || day.today?
+            @dates << day
+            count += 1
+          end
+          y = y + 70
+          break if count > 4
+        end
+      end
+      if current_user.email == "jaredwillmann@gmail.com"
+        @dates = []
+        y = 0
+        count = 0
+        loop do 
+          day = Date.new(2016, 2, 15) + y
+          if day.future? || day.today?
+            @dates << day
+            count += 1
+          end
+          y = y + 70
+          break if count > 4
+        end
+      end
+      if current_user.email == "andrewe.katz88@gmail.com"
+        @dates = []
+        y = 0
+        count = 0
+        loop do 
+          day = Date.new(2016, 2, 29) + y
+          if day.future? || day.today?
+            @dates << day
+            count += 1
+          end
+          y = y + 70
+          break if count > 4
+        end
+      end
+      if current_user.email == "spercolani@gmail.com"
+        @dates = []
+        y = 0
+        count = 0
+        loop do 
+          day = Date.new(2014, 1, 4) + y
           if day.future? || day.today?
             @dates << day
             count += 1

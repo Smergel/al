@@ -1,6 +1,10 @@
 class ProfilesController < ApplicationController
   def show
-    @posts = Post.where(user_id: current_user.id).sort_by(&:date).reverse
+    if current_user.id != Profile.where(user_id: params[:id]).first.user_id
+      redirect_to '/'
+    else
+      @posts = Post.where(user_id: current_user.id).sort_by(&:date).reverse
+    end
   end
 
   def edit
