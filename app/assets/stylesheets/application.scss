@@ -16,11 +16,12 @@
 
 $c1: #006BB2;
 $c2: darkred;
-$c3: #f3f3f3;
-$cb: #a4a4a4;
+$c3: #ecf0f1;
+$cb: #b3b6b7;
 $time: 1.5s;
 $x: 14.285%;
 $fontFooter: "Gill Sans", "Gadugi", Sans-Serif;
+$titfont: "Futura", "Arial";
 
 body {
 	width: 100%;
@@ -33,7 +34,7 @@ body {
 	top: 14.5px;
 	left: 14.5px;
 	padding: 10px 5px;
-	border: 1px solid #a7a7a7;
+	border: 1px solid $cb;
 	width: 233px;
 	height: 55px;
 	z-index: 900;
@@ -130,18 +131,6 @@ body {
 	background: -o-linear-gradient(rgba(1,1,1,0.0), #FFF);
 	background: linear-gradient(rgba(1,1,1,0.0), #FFF);
 }
-// .grad::after {
-// 	content: "";
-// 	position: absolute;
-// 	width: 100%;
-// 	height: 35%;
-// 	bottom: 0;
-// 	background: -webkit-linear-gradient(rgba(1,1,1,0.0), #FFF);
-// 	background: -mox-linear-gradient(rgba(1,1,1,0.0), #FFF);
-// 	background: -ms-linear-gradient(rgba(1,1,1,0.0), #FFF);
-// 	background: -o-linear-gradient(rgba(1,1,1,0.0), #FFF);
-// 	background: linear-gradient(rgba(1,1,1,0.0), #FFF); 
-// }
 .band {
 	font-size: 5em;
 }
@@ -202,7 +191,7 @@ body {
 	position: absolute;
 	left: 25px;
 	bottom: 20px;
-	font-family: "Futura";
+	font-family: $titfont;
 	color: darkred;
 	font-weight: 700;
 	letter-spacing: 2px;
@@ -230,6 +219,7 @@ body {
 	font-family: "Futura";
 	color: darkred;
 	font-style: italic;
+	margin: 0px;
 }
 .quote:before {
 	content: "'"
@@ -344,18 +334,18 @@ body {
 		background-color: $c2;
 		color: white;
 		text-align: center;
-		width: $x;
+		width: 125px;
 	}
 	td {
-		height: 10.3vw;
-		width: $x;
+		width: 125px;
+		height: 125px;
 		vertical-align: top;
 	}
 	td.notmonth {
 		color: $cb;
 	}
 	td.today {
-		border: 2px solid $c1;
+		outline: 2px solid $c1;
 		background-color: lightblue;
 	}
 	td.jake {
@@ -606,6 +596,88 @@ legend {
 	}
 }
 
+
+// Smallest Screen Changes -----------------------------
+@media (max-width: 768px) and (min-width: 0px) {
+	.logo {
+		position: static;
+		padding: 10px 5px;
+		border: 1px solid $cb;
+		width: 233px;
+		margin: 15px auto;
+		height: 55px;
+		z-index: 900;
+		background-color: rgba(255, 255, 255, 0.5);
+	}
+	.grad {
+		display: none;
+	}
+	.white {
+		display: none;
+	}
+	.band {
+		font-size: 2em;
+		padding: 0px 15px;
+		margin-bottom: 15px;
+	}
+	.album {
+		padding: 0px 15px;
+		margin-bottom: 15px;
+		font-size: 1.5em;
+	}
+	.inform_me {
+		padding: 0px 15px;
+		margin: 0px;
+	}
+	.author {
+
+		img {
+			border-radius: 50px;
+			width: 40px;
+			height: 40px;
+			margin-right: 20px;
+			margin-top: -4px;
+		}
+	}
+	.write_up {
+		font-size: 1.2em;
+		margin: 0px 0px 0px 0px;	
+		text-align: justify;
+		text-indent: 15px;
+		width: 100%;
+	}
+	.image_album img {
+		float: none;
+		margin: -15px 0px 15px 0px;
+		width: 100%;
+	}
+	.tit {
+		position: static;
+		left: 25px;
+		bottom: 20px;
+		font-family: $titfont;
+		color: darkred;
+		font-weight: 700;
+		letter-spacing: 2px;
+	}
+	.rel {
+		position: static;
+		height: 30%;
+		width: 100%;
+	}
+	.top_home {
+		height: 100%;
+	}
+	.stuff {
+		margin: 40px 0px 25px 0px;
+	}
+	.bottom {
+		margin: 45px 0px 75px 0px;
+	}
+	.center {
+		text-align: center;
+	}
+}
 
 
 

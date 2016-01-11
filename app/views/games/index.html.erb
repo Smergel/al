@@ -17,7 +17,7 @@
 				<!-- <li><div class="btn btn-default" onclick="starter()">Start Game</li> -->
 				<li><div class="btn btn-default" onclick="reloader()">Reshuffle Game List</div></li>
 				<li><a href="#" class="btn btn-default" onclick="hider()">Difficulty Toggle</a></li>
-				<li><a href="/leaderboard" class="btn btn-default">Leaderboard</a></li>
+				<li><a href="#" class="btn btn-default">Leaderboard</a></li>
 				<!-- <li><div class="dropdown">
 					<button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Pick a Song List  <span class="caret"></span></button>
 					<ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
@@ -34,19 +34,19 @@
 
 <script type='text/javascript'>
 
-(function()
-{
-  if( window.localStorage )
-  {
-    if( !localStorage.getItem( 'firstLoad' ) )
-    {
-      localStorage[ 'firstLoad' ] = true;
-      window.location.reload();
-    }  
-    else
-      localStorage.removeItem( 'firstLoad' );
-  }
-})();
+	(function()
+	{
+	  if( window.localStorage )
+	  {
+	    if( !localStorage.getItem( 'firstLoad' ) )
+	    {
+	      localStorage[ 'firstLoad' ] = true;
+	      window.location.reload();
+	    }  
+	    else
+	      localStorage.removeItem( 'firstLoad' );
+	  }
+	})();
 
   var tag = document.createElement('script');
   tag.src = "https://www.youtube.com/iframe_api";
