@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   post '/calendar' => 'home#calendar'
   get 'leaderboard' => 'home#leaderboard'
   get '/history' => 'posts#history'
+  post '/score' => 'games#score'
 
   devise_for :users, :controllers => {:registrations => "registrations"}
 
@@ -14,7 +15,6 @@ Rails.application.routes.draw do
   resources :profiles
   resources :games
   resources :events
-  resources :leaderboards
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
