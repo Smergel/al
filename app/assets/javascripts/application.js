@@ -16,7 +16,7 @@
 //= require_tree .
 
 function onPlayerReady(event) {
-  event.target.cuePlaylist([gon.youtube]);
+  event.target.loadPlaylist([gon.youtube]);
 }
 function onPlayerStateChange(event) {
 

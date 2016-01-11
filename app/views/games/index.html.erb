@@ -14,9 +14,10 @@
 		</div>
 		<div class="col-lg-5">
 			<ul class="button_row">
-				<li><div class="btn btn-default" onclick="reloader()">Start A New Game</div></li>
+				<!-- <li><div class="btn btn-default" onclick="starter()">Start Game</li> -->
+				<li><div class="btn btn-default" onclick="reloader()">Reshuffle Game List</div></li>
 				<li><a href="#" class="btn btn-default" onclick="hider()">Difficulty Toggle</a></li>
-				<a href="/leaderboard" class="btn btn-default">Leaderboard</a>
+				<li><a href="/leaderboard" class="btn btn-default">Leaderboard</a></li>
 				<!-- <li><div class="dropdown">
 					<button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Pick a Song List  <span class="caret"></span></button>
 					<ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
@@ -30,7 +31,23 @@
 		</div>
 	</div>
 </div>
-<script>
+
+<script type='text/javascript'>
+
+(function()
+{
+  if( window.localStorage )
+  {
+    if( !localStorage.getItem( 'firstLoad' ) )
+    {
+      localStorage[ 'firstLoad' ] = true;
+      window.location.reload();
+    }  
+    else
+      localStorage.removeItem( 'firstLoad' );
+  }
+})();
+
   var tag = document.createElement('script');
   tag.src = "https://www.youtube.com/iframe_api";
   var firstScriptTag = document.getElementsByTagName('script')[0];
@@ -41,12 +58,11 @@
     player = new YT.Player('player', {
       playerVars: {
         showinfo: 0,
-        autoplay: 0,
         controls: 0, 
         minimalbranding: 0,
         disablekb: 0
       },
-     cuePlaylist:{
+     loadPlaylist:{
         listType:'playlist',
         list:gon.youtube,
         index:parseInt(0),
