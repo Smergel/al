@@ -39,14 +39,14 @@
   var player;
   function onYouTubePlayerAPIReady() {
     player = new YT.Player('player', {
-      autoplay: 0,
+      autoplay: 1,
       playerVars: {
         showinfo: 0,
         controls: 0, 
         minimalbranding: 0,
         disablekb: 0
       },
-     cuePlaylist:{
+     loadPlaylist:{
         listType:'playlist',
         list:gon.youtube,
         index:parseInt(0),
