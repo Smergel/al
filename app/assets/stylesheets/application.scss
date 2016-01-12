@@ -704,6 +704,7 @@ legend {
 
 		ul {
 			display: none;
+			transition: 2s;
 
 			li {
 			}
@@ -713,7 +714,7 @@ legend {
 			cursor: pointer;
 			position: absolute;
 			top: 17.5px;
-			right: 30px;
+			right: 20px;
 			font-size: 2em;
 		}
 	}
@@ -723,6 +724,7 @@ legend {
 			width: 92vw;
 			text-align: right;
 			list-style-type: none;
+			transition: 2s;
 
 			li {
 				padding: 7px 0px;
