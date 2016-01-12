@@ -29,6 +29,12 @@ body {
 	overflow-x: hidden;
 }
 // Layout Application Page -----
+.navbar-checkbox {
+	display: none;
+}
+.menu {
+	display: none;
+}
 .logo {
 	position: absolute;
 	top: 14.5px;
@@ -208,7 +214,7 @@ body {
 	margin: 40px 0px 25px 0px;
 }
 .bottom {
-	margin: 45px 0px 75px 0px;
+	margin: 45px 0px 55px 0px;
 }
 .center {
 	text-align: center;
@@ -264,7 +270,7 @@ body {
 }
 .past_album_list {
 	list-style-type: none;
-	margin-bottom: 90px;
+	margin-bottom: 70px;
 	padding: 0px;
 	text-align: center;
 
@@ -599,12 +605,18 @@ legend {
 
 // Smallest Screen Changes -----------------------------
 @media (max-width: 768px) and (min-width: 0px) {
+	.footer {
+		display: none;
+	}
+	.top {
+		display: none;
+	}
 	.logo {
 		position: static;
 		padding: 10px 5px;
 		border: 1px solid $cb;
 		width: 233px;
-		margin: 15px auto;
+		margin: 15px 30px;
 		height: 55px;
 		z-index: 900;
 		background-color: rgba(255, 255, 255, 0.5);
@@ -676,6 +688,48 @@ legend {
 	}
 	.center {
 		text-align: center;
+	}
+	.past_album_list {
+		margin-bottom: 50px;
+	}
+	.post_date {
+		display: none;
+	}
+	.ruler {
+		display: none;
+	}
+	// NavBar --------------------------
+	.menu {
+		display: inline-block;
+
+		ul {
+			display: none;
+
+			li {
+			}
+		}
+		.navbar-handle {
+			display: block;
+			cursor: pointer;
+			position: absolute;
+			top: 17.5px;
+			right: 30px;
+			font-size: 2em;
+		}
+	}
+	#navbar-checkbox:checked + .menu {
+		ul {
+			display: block;
+			width: 92vw;
+			text-align: right;
+			list-style-type: none;
+
+			li {
+				padding: 7px 0px;
+				font-size: 1.4em;
+				color: $c1;
+			}
+		}
 	}
 }
 

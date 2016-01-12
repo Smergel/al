@@ -12,7 +12,22 @@
 </head>
 <body>
 
-	<div class="logo"><a href="/"><img src="/assets/AElogo.svg" height="35" /></a></div>
+<div class="logo"><a href="/"><img src="/assets/AElogo.svg" height="35" /></a></div>
+
+<input type="checkbox" id="navbar-checkbox" class="navbar-checkbox" />
+<nav class="menu">
+	<ul>
+		<li><a href="/">Current Album</a></li>
+		<li><a href="/posts">Past Albums</a></li>
+		<% if current_user.nil? %>
+			<li><a href="/users/sign_in">Login</a></li>
+		<% else %>
+			<li><%= link_to "Log Out", destroy_user_session_path, method: "DELETE" %></li>
+		<% end %>
+	</ul>
+
+	<label for="navbar-checkbox" class="navbar-handle">&#9776;</label>
+</nav>
 
 <%= yield %>
 
