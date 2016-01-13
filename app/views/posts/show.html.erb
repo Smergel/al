@@ -16,7 +16,7 @@
 	<div class="row stuff">
 		<div class="col-lg-8">
 			<div class="image_album"><%= image_tag @post.album_art %></div>
-			<div class="write_up"><%= simple_format(@post.write_up) %></div>
+			<div class="write_up"><%= simple_format(@post.write_up) %></div><hr />
 		</div>
 		<div class="col-lg-4">			
 			<div class="wrap_mini"><iframe id="player" type="text/html" width="100%" height="100%" src="http://www.youtube.com/embed/<%= @post.youtube.split("=")[1] %>" frameborder="0"></iframe></div>
