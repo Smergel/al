@@ -613,10 +613,9 @@ legend {
 	.logo {
 		position: static;
 		padding: 10px 5px;
-		border: 1px solid $cb;
-		width: 233px;
-		margin: 15px 30px;
-		height: 55px;
+		border: none;
+		width: 170px;
+		margin: 15px auto;
 		z-index: 900;
 		background-color: rgba(255, 255, 255, 0.5);
 	}
@@ -712,7 +711,7 @@ legend {
 			display: block;
 			cursor: pointer;
 			position: absolute;
-			top: 17.5px;
+			top: 15px;
 			right: 20px;
 			font-size: 2em;
 		}
@@ -723,7 +722,6 @@ legend {
 			width: 92vw;
 			text-align: right;
 			list-style-type: none;
-			transition: 2s;
 
 			li {
 				padding: 7px 0px;
